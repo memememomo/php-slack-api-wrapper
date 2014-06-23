@@ -10,12 +10,15 @@ https://api.slack.com/
 
 # SYNOPSYS
 
-  require_once 'src/Slack.php';
 
-  $token = 'Slack-Token';
+```
+require_once 'src/Slack.php';
 
-  $slack = new Slack($token);
+$token = 'Slack-Token';
 
-  // Post
-  $res = $slack->user_list();
-  var_dump($res['members']);
+$slack = new Slack($token);
+
+// User List
+$res = $slack->user_list();
+var_dump($res['members']);
+```
