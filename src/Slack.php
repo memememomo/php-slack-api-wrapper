@@ -83,9 +83,20 @@ class Slack
         );
     }
 
-    public function files_upload()
+    public function files_upload($file = null, $content = null, $filetype = null, $filename = null, $title = null, $initial_comment = null, $channels = null)
     {
-        // TODO
+        return $this->_submit(
+            $this->_url('files.upload'),
+            $this->_params(array(
+                'file' => $file,
+                'content' => $content,
+                'filetype' => $filetype,
+                'filename' => $filename,
+                'title' => $title,
+                'initial_comment' => $initial_comment,
+                'channels' => $channels,
+            ))
+        );
     }
 
     public function files_list($user = null, $ts_from = null, $ts_to = null, $types = null, $count = null, $page = null)
